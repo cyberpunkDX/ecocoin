@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class WelcomeController extends Controller
+{
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke()
+    {
+        $data = [
+            'title' => env('APP_NAME'),
+        ];
+
+        return view('welcome', $data);
+    }
+}

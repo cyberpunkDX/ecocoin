@@ -1,18 +1,43 @@
-<div class="greennature-navigation-wrapper">
-    <nav class="greennature-navigation" id="greennature-main-navigation">
-        <ul id="menu-main-menu-1" class="sf-menu greennature-main-menu">
-            <li
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-5680 current_page_item menu-item-5855menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-5680 current_page_item menu-item-5855 greennature-normal-menu">
-                <a href="/register"><i class="fa fa-home"></i>Create Account</a>
-            </li>
-            
-        </ul>
-        <a href="login" class="greennature-donate-button"><span
-                class="greennature-button-overlay"></span><span
-                class="greennature-button-donate-text">Login</span></a>
+<ul class="dropdown-menu dropdown-menu-end p-4">
+    <div class="d-flex flex-column gap-6">
+        <div class="hstack justify-content-between border-bottom pb-6">
+            <p class="mb-0 fs-5 text-dark">Menu</p>
+            <button type="button" class="btn-close opacity-75" aria-label="Close"></button>
+        </div>
+        <div class="d-flex flex-column gap-3">
+            <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                <li class="header-item">
+                    <a href="/" aria-current="true"
+                        class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
+                            src="home/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                            class="img-fluid animate-spin">Home</a>
+                </li>
+                <li class="header-item">
+                    <a href="about" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                            src="home/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                            class="img-fluid animate-spin">About</a>
+                </li>
+                
+                
+                <li class="header-item">
+                    <a href="contact" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                            src="home/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                            class="img-fluid animate-spin">Contact</a>
+                </li>
+            </ul>
+            <div class="hstack gap-3">
+                <a href="login"
+                    class="btn btn-outline-light fs-6 bg-white px-3 py-2 text-dark w-50 hstack justify-content-center">Sign
+                    In</a>
+                <a href="register"
+                    class="btn btn-dark text-white fs-6 bg-dark px-3 py-2 w-50 hstack justify-content-center">Sign
+                    Up</a>
+            </div>
+        </div>
 
-       
-    </nav>
-    <div class="greennature-navigation-gimmick" id="greennature-navigation-gimmick"></div>
-    <div class="clear"></div>
-</div>
+        <div>
+            <a class="text-dark" href="tel:{{ config('app.phone') }}">{{ config('app.phone') }}</a>
+            <a class="fs-8 text-dark fw-bold" href="mailto:{{ config('app.email') }}">{{ config('app.email') }}</a>
+        </div>
+    </div>
+</ul>

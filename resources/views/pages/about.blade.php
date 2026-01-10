@@ -1,199 +1,244 @@
-
 @extends('layouts.master')
 @section('content')
     <!-- section content begin -->
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid">
-                <div class="uk-width-1-1">
-                    <div class="uk-width-3-5@m">
-                        <h1 class="uk-margin-remove-bottom">Empowering affiliate success <span class="in-highlight">since
-                                2010</span></h1>
-                        <p class="uk-text-lead uk-text-muted uk-margin-small-top">For over a decade, we’ve been helping
-                            affiliate marketers and investors build profitable partnerships and grow their wealth.</p>
-                    </div>
-                </div>
-                <div class="uk-grid uk-grid-large uk-child-width-1-3@m uk-margin-medium-top" data-uk-grid>
-                    <div class="uk-flex uk-flex-left">
-                        <div class="uk-margin-right">
-                            <div class="in-icon-wrap primary-color">
-                                <i class="fas fa-leaf fa-lg"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3>Philosophy</h3>
-                            <p class="uk-margin-remove-bottom">We believe in empowering affiliate marketers with the tools
-                                and insights they need to attract investment and achieve sustainable growth.</p>
-                        </div>
-                    </div>
-                    <div class="uk-flex uk-flex-left">
-                        <div class="uk-margin-right">
-                            <div class="in-icon-wrap primary-color">
-                                <i class="fas fa-hourglass-end fa-lg"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3>History</h3>
-                            <p class="uk-margin-remove-bottom">Since 2010, we’ve grown from a small team passionate about
-                                affiliate marketing to a trusted platform connecting marketers with investors worldwide.</p>
-                        </div>
-                    </div>
-                    <div class="uk-flex uk-flex-left">
-                        <div class="uk-margin-right">
-                            <div class="in-icon-wrap primary-color">
-                                <i class="fas fa-flag fa-lg"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3>Culture</h3>
-                            <p class="uk-margin-remove-bottom">Our team thrives on innovation, collaboration, and a
-                                relentless drive to help our clients succeed in the affiliate marketing investment space.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- section content end -->
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid">
-                <div class="uk-width-1-1">
-                    <div class="uk-card uk-card-default uk-border-rounded uk-background-center uk-background-contain uk-background-image@m"
-                        style="background-image: url({{ asset('img/blockit/in-team-background-1.png') }}); background-position-y: calc(50% + -7.53px);"
-                        data-uk-parallax="bgy: -100">
-                        <div class="uk-card-body">
-                            <div class="uk-grid uk-flex uk-flex-center">
-                                <div class="uk-width-3-4@m uk-text-center">
-                                    <h2>Trust Our Affiliate Experts</h2>
-                                    <p>We’re a dedicated team of professionals committed to revolutionizing affiliate
-                                        marketing by connecting marketers with investors and providing cutting-edge
-                                        solutions.</p>
-                                </div>
-                            </div>
-                            <div class="uk-grid uk-child-width-1-2@m uk-margin-medium-top" data-uk-grid="">
-                                <div class="uk-flex uk-flex-left uk-first-column">
-                                    <div class="uk-margin-right">
-                                        <img class="uk-align-center" src="{{ asset('img/blockit/in-team-1.png') }}" alt="image-team"
-                                            width="300">
-                                    </div>
-                                    <div>
-                                        <p class="uk-text-small uk-text-muted uk-text-uppercase uk-margin-remove-bottom">
-                                            Chief Executive Officer</p>
-                                        <h4 class="uk-margin-small-top">Cynthia Dixon</h4>
-                                        <p>With over 15 years in affiliate marketing, Cynthia leads our vision to bridge
-                                            marketers and investors seamlessly.</p>
-                                        <div>
-                                            <a class="uk-link-muted" href="http://T.me//CynthiaDixon1"><i
-                                                    class="fab fa-telegram uk-margin-small-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="uk-flex uk-flex-left">
-                                    <div class="uk-margin-right">
-                                        <img class="uk-align-center" src="{{ asset('img/blockit/in-team-2.png') }}" alt="image-team"
-                                            width="300">
-                                    </div>
-                                    <div>
-                                        <p class="uk-text-small uk-text-muted uk-text-uppercase uk-margin-remove-bottom">
-                                            Affiliate Strategist</p>
-                                        <h4 class="uk-margin-small-top">Arthur Parker</h4>
-                                        <p>Arthur crafts strategies that help affiliates maximize earnings and attract
-                                            investment opportunities.</p>
-                                        <div>
-                                            <a class="uk-link-muted" href="http://T.me//Arthur0Parker"><i
-                                                    class="fab fa-telegram uk-margin-small-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="uk-flex uk-flex-left uk-grid-margin uk-first-column">
-                                    <div class="uk-margin-right">
-                                        <img class="uk-align-center" src="{{ asset('img/blockit/in-team-3.png') }}" alt="image-team"
-                                            width="300">
-                                    </div>
-                                    <div>
-                                        <p class="uk-text-small uk-text-muted uk-text-uppercase uk-margin-remove-bottom">
-                                            Marketing Specialist</p>
-                                        <h4 class="uk-margin-small-top">Evelyn Mason</h4>
-                                        <p>Evelyn drives our outreach, ensuring affiliates and investors connect through
-                                            effective campaigns.</p>
-                                        <div>
-                                            <a class="uk-link-muted" href="http://T.me//EvelynmMason"><i
-                                                    class="fab fa-telegram uk-margin-small-right"></i></a>
-                                        </div>
+    <div class="page-wrapper overflow-hidden">
 
+        <!--  Banner Section -->
+        <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+            style="background-image: url({{ asset('home/images/backgrounds/projects-banner.jpg') }});">
+            <div class="container">
+                <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+                    <div class="row align-items-center">
+                        <div class="col-xl-8">
+                            <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
+                                data-aos-duration="1000">
+                                <img src="home/images/svgs/primary-leaf.svg" alt=""
+                                    class="img-fluid animate-spin">
+                                <p class="mb-0 text-white fs-5 text-opacity-70">We are a passionate team dedicated to <span
+                                        class="text-primary">incentivizing eco-friendly</span> actions to build a sustainable future for all.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200"
+                        data-aos-duration="1000">
+                        <h1 class="mb-0 fs-16 text-white lh-1">About {{ config('app.name') }}</h1>
+                        <a href="{{ route('register') }}" class="p-1 ps-7 bg-primary rounded-pill">
+                            <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
+                                <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                                    </div>
+        <!--  About Content Section -->
+        <section class="about-content py-5 py-lg-11 py-xl-12">
+            <div class="container">
+                <div class="d-flex flex-column gap-5 gap-xl-11 gap-xxl-12">
+                    <div class="row gap-4 gap-lg-0">
+                        <div class="col-lg-4">
+                            <h2 class="fs-13 mb-0" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                                Our Mission
+                            </h2>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="d-flex flex-column gap-4 gap-lg-5" data-aos="fade-up" data-aos-delay="200"
+                                data-aos-duration="1000">
+                                <p class="mb-0 fs-5 text-dark">
+                                    At {{ config('app.name') }}, we are driven by a simple yet powerful idea: to reward individuals for making environmentally conscious choices. We believe that by creating a community of eco-warriors, we can inspire a global movement towards a greener, more sustainable planet. Our platform provides a space for users to share their eco-friendly activities, track their impact, and earn cryptocurrency as a token of appreciation for their efforts.
+                                </p>
+                                <p class="mb-0 fs-5 text-dark">
+                                    We are more than just a cryptocurrency project; we are a community of changemakers. By merging technology with a passion for the environment, we are creating a unique ecosystem where every green action counts. Whether you're a seasoned environmentalist or just starting your journey, {{ config('app.name') }} offers a rewarding way to make a positive impact. Join us as we build a better future, one eco-friendly act at a time.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-xl-5">
+                        <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+                            <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="100"
+                                data-aos-duration="1000">
+                                <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="1000">1000</span>K+
+                                </h2>
+                                <div class="d-flex flex-column gap-3">
+                                    <h4 class="mb-0">Community Members</h4>
+                                    <p class="mb-0">A growing global network of individuals committed to making a difference.</p>
                                 </div>
-                                <div class="uk-flex uk-flex-left uk-grid-margin">
-                                    <div class="uk-margin-right">
-                                        <img class="uk-align-center" src="{{ asset('img/blockit/in-team-4.png') }}" alt="image-team"
-                                            width="300">
-                                    </div>
-                                    <div>
-                                        <p class="uk-text-small uk-text-uppercase uk-text-muted uk-margin-remove-bottom">
-                                            Investor Relations</p>
-                                        <h4 class="uk-margin-small-top">Bryan Greene</h4>
-                                        <p>Bryan ensures our investors understand the potential of affiliate marketing
-                                            opportunities.</p>
-                                        <div>
-                                            <a class="uk-link-muted" href="http://T.me//BryanGreene2022"><i
-                                                    class="fab fa-telegram uk-margin-small-right"></i></a>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+                            <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200"
+                                data-aos-duration="1000">
+                                <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="10">10</span>M+
+                                </h2>
+                                <div class="d-flex flex-column gap-3">
+                                    <h4 class="mb-0">{{ config('app.name') }}s Earned</h4>
+                                    <p class="mb-0">Rewarding our community for their commitment to a greener planet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+                            <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="300"
+                                data-aos-duration="1000">
+                                <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="500">500</span>+
+                                </h2>
+                                <div class="d-flex flex-column gap-3">
+                                    <h4 class="mb-0">Eco-Activities</h4>
+                                    <p class="mb-0">A diverse range of activities that empower our community to make an impact.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- section content begin -->
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid uk-flex uk-flex-center">
-                <div class="uk-width-3-4@m">
-                    <div class="uk-grid uk-flex uk-flex-middle" data-uk-grid>
-                        <div class="uk-width-1-2@m">
-                            <h4 class="uk-text-muted">Numbers Speak</h4>
-                            <h1 class="uk-margin-medium-bottom">We’re ready<br>for your <span
-                                    class="in-highlight">success.</span></h1>
-                            <a href="#" class="uk-button uk-button-primary uk-border-rounded">Join Us</a>
+        </section>
+
+        <!--  Meet our team Section -->
+        <section class="meet-our-team py-5 py-lg-11 py-xl-12">
+            <div class="container">
+                <div class="d-flex flex-column gap-5 gap-xl-11">
+                    <div class="row gap-7 gap-xl-0">
+                        <div class="col-xl-4 col-xxl-4">
+                            <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+                                data-aos-duration="1000">
+                                <span
+                                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">02</span>
+                                <hr class="border-line bg-white">
+                                <span class="badge text-bg-dark">The team</span>
+                            </div>
                         </div>
-                        <div class="uk-width-1-2@m">
-                            <div class="uk-margin-large" data-uk-grid>
-                                <div class="uk-width-1-3@m">
-                                    <h1 class="uk-text-primary uk-text-right@m">
-                                        <span class="count" data-counter-end="1500">0</span>
-                                    </h1>
-                                    <hr class="uk-divider-small uk-text-right@m">
-                                </div>
-                                <div class="uk-width-expand@m">
-                                    <h4>Affiliate Partners</h4>
-                                    <p>We’ve onboarded thousands of affiliates, helping them grow their networks and
-                                        earnings.</p>
+                        <div class="col-xl-8 col-xxl-7">
+                            <div class="row">
+                                <div class="col-xxl-8">
+                                    <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
+                                        data-aos-duration="1000">
+                                        <h2 class="mb-0">Meet Our Team</h2>
+                                        <p class="fs-5 mb-0 text-opacity-70">Our team is committed to redefining digital
+                                            experiences through
+                                            innovative web solutions while fostering a diverse and collaborative
+                                            environment.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="uk-margin-large" data-uk-grid>
-                                <div class="uk-width-1-3@m">
-                                    <h1 class="uk-text-primary uk-text-right@m">
-                                        <span class="count" data-counter-end="45">0</span>
-                                    </h1>
-                                    <hr class="uk-divider-small uk-text-right@m">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                            <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="100"
+                                data-aos-duration="1000">
+                                <div class="meet-team-img position-relative overflow-hidden">
+                                    <img src="home/images/team/team-img-1.jpg" alt="team-img"
+                                        class="img-fluid w-100">
+                                    <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
+                                        <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-twitter.svg" alt="twitter"></a>
+                                            </li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-be.svg" alt="be"></a></li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-linkedin.svg" alt="linkedin"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="uk-width-expand@m">
-                                    <h4>Countries Served</h4>
-                                    <p>Our platform supports affiliate marketers and investors across dozens of global
-                                        markets.</p>
+                                <div class="meet-team-details">
+                                    <h4 class="mb-0">Martha Finley</h4>
+                                    <p class="mb-0">Founder & CEO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                            <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="200"
+                                data-aos-duration="1000">
+                                <div class="meet-team-img position-relative overflow-hidden">
+                                    <img src="home/images/team/team-img-2.jpg" alt="team-img"
+                                        class="img-fluid w-100">
+                                    <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
+                                        <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-twitter.svg" alt="twitter"></a>
+                                            </li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-be.svg" alt="be"></a></li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-linkedin.svg" alt="linkedin"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="meet-team-details">
+                                    <h4 class="mb-0">Floyd Miles</h4>
+                                    <p class="mb-0">Lead Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                            <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="300"
+                                data-aos-duration="1000">
+                                <div class="meet-team-img position-relative overflow-hidden">
+                                    <img src="home/images/team/team-img-3.jpg" alt="team-img"
+                                        class="img-fluid w-100">
+                                    <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
+                                        <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-twitter.svg" alt="twitter"></a>
+                                            </li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-be.svg" alt="be"></a></li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-linkedin.svg" alt="linkedin"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="meet-team-details">
+                                    <h4 class="mb-0">Glenna Snyder</h4>
+                                    <p class="mb-0">Community Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                            <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="400"
+                                data-aos-duration="1000">
+                                <div class="meet-team-img position-relative overflow-hidden">
+                                    <img src="home/images/team/team-img-4.jpg" alt="team-img"
+                                        class="img-fluid w-100">
+                                    <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
+                                        <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="home/images/svgs/icon-twitter.svg" alt="twitter"></a>
+                                            </li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="../assets/images/svgs/icon-be.svg" alt="be"></a></li>
+                                            <li><a href="#!"
+                                                    class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><img
+                                                        src="../assets/images/svgs/icon-linkedin.svg" alt="linkedin"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="meet-team-details">
+                                    <h4 class="mb-0">Albert Flores</h4>
+                                    <p class="mb-0">Marketing Specialist</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
     </div>
-    <!-- section content end -->
 @endsection

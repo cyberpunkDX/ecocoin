@@ -6,7 +6,7 @@
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    <a href="{{ route('media.create') }}" class="btn btn-success mb-3">Upload New Media</a>
+    <a href="{{ route('user.media.create') }}" class="btn btn-success mb-3">Upload New Media</a>
     <div class="row">
         @forelse($media as $item)
             <div class="col-md-4 mb-4">
@@ -22,9 +22,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $item->title ?? 'Untitled' }}</h5>
                         <p class="card-text">{{ $item->description }}</p>
-                        <a href="{{ route('media.show', $item) }}" class="btn btn-primary btn-sm">View</a>
-                        <a href="{{ route('media.edit', $item) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('media.destroy', $item) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this media?');">
+                        <a href="{{ route('user.media.show', $item) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('user.media.edit', $item) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('user.media.destroy', $item) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this media?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>

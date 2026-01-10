@@ -1,57 +1,82 @@
-@extends('layouts.auth.master')
+@extends('auth.layout.master')
 @section('content')
-    <div class="login-card mx-2 text-light"  style="background-color: #3c3c3c; padding-bottom: 60;">
-        <div class="card-header align-items-center d-flex justify-content-center" style="background-color:#253526;">
-            <img src="{{ env('APP_LOGO_DARK') }}" class="w-50" alt="">
-        </div>
-
-        <div class="card-body p-4">
-            <p class="text-light">Login with your email and password</p>
-            <div style="border: 1px solid #90ee90; color: #ffff; border-radius: 4px; padding: 8px 12px; font-size: 0.95em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-lock" style="color: #222;"></i>
-                <span class="fw-bold">URL:</span> <span style="word-break: break-all;">{{ url('/login') }}</span>
-            </div>
-            @if (session('status'))
-                <p class="text-success"> {{ session('status') }}</p>
-            @endif
-            <form action="/login" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label for="email" class="form-label text-light">Username or Email</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        <input type="text" name="email" class="form-control" required value="{{ old('email') }}" id="email"
-                            type="email" placeholder="Email Address">
+    <!-- section content begin -->
+    <section>
+        <div class="card card-bordered">
+            <div class="card-inner card-inner-lg">
+                <div class="nk-block-head">
+                    <div class="nk-block-head-content">
+                        <h4 class="nk-block-title">Login into Account</h4>
+                        <div class="nk-block-des mt-2">
+                            <p>Sign in into your account using your email and passcode.</p>
+                        </div>
                     </div>
-                    @if ($errors->has('email'))
-                        <p class="text-danger">{{ $errors->first('email') }}</p>
-                    @endif
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label text-light">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                        <input type="password" name="password" class="form-control" value="{{ old('password') }}" id="password"
-                            type="password" placeholder="Password ">
 
+                <form method="POST" action="/login" autocomplete="off" id="loginForm" class="form-validate is-alter">
+                    @csrf
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="username">Email Address <span class="text-danger">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </label>
+                        </div>
+                        <div class="form-control-wrap">
+                            <input name="email" type="email" autocomplete="new-email"
+                                class="form-control form-control-lg" id="username"
+                                placeholder="Enter your email address" autocomplete="off"
+                                data-msg-email="Enter a valid email." data-msg-required="Required." required
+                                value="{{ old('email') }}">
+                        </div>
                     </div>
-                    @if ($errors->has('password'))
-                        <p class="text-danger">{{ $errors->first('password') }}</p>
-                    @endif
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="passcode">Password <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="form-control-wrap">
+                            <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch"
+                                data-target="passcode">
+                                <em class="passcode-icon icon-show icon ni ni-eye-off"></em>
+                                <em class="passcode-icon icon-hide icon ni ni-eye"></em>
+                            </a>
+                            <input name="password" autocomplete="new-password" type="password"
+                                class="form-control form-control-lg" id="passcode" placeholder="Enter your passcode"
+                                minlength="6" data-msg-required="Required." data-msg-minlength="At least 6 chars."
+                                required>
+                        </div>
+                        <div class="form-control-group d-flex justify-between mt-2 mb-gs">
+                            <div class="form-control-wrap">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="remember"
+                                        id="remember-me">
+                                    <label class="custom-control-label text-soft" for="remember-me">Remember
+                                        Me</label>
+                                </div>
+                            </div>
+                            @if (Route::has('password.request'))
+                                <div class="form-control-link">
+                                    <a tabindex="5" class="link link-primary"
+                                        href="{{ route('password.request') }}">Forgot
+                                        password?</a>
+                                </div>
+                            @endif
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type='submit' name='submit' class="btn btn-lg btn-primary btn-block">Login</button>
+                    </div>
+                </form>
+                <div class="form-note-s2 text-center pt-4"> New on our platform? <a href="/register"><strong>Create an
+                            account</strong></a>
                 </div>
-                <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-login text-white"><i class="fas fa-sign-in-alt"></i>
-                        Login</button>
-                </div>
-                <div class="text-center">
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-            </form>
-            <div class="text-center mt-3">
-                <p>Don't have an account? <a href="/register" class="eco-green">Sign Up</a></p>
+                <div id="google_translate_element" align="center"></div>
             </div>
         </div>
-        
-    </div>
+    </section>
+    <!-- section content end -->
     
 @endsection

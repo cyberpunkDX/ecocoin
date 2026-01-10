@@ -11,6 +11,7 @@ Route::get('/about', [WelcomeController::class, 'about'])
     ->name('about');
 
 Route::get('/customer', [PageController::class, 'customer'])->name('customer');
-Route::get('/about/us/', [PageController::class, 'aboutUs'])->name('about.us');
+Route::get('/about', [PageController::class, 'aboutUs'])->name('about.us');
 Route::get('/legal/documentation', [PageController::class, 'legalDocumentation'])->name('legal.documentation');
 Route::get('/help/center', [PageController::class, 'helpCenter'])->name('help.center');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');

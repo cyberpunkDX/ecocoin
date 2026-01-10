@@ -42,4 +42,13 @@ class PageController extends Controller
 
         return view('pages.help_center', $data);
     }
+
+    public function contact()
+    {
+        $data = [
+            'title' => 'Contact Us',
+        ];
+
+        return view('pages.contact', $data);
+    }
 }

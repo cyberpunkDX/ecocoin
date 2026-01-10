@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\User\ProfileController;
 use App\Http\Controllers\Dashboard\User\DashboardController;
 use App\Http\Controllers\Dashboard\User\WithdrawalController;
 use App\Http\Controllers\Dashboard\User\VerificationController;
+use App\Http\Controllers\MediaController;
 use App\Models\Investment;
 
 Route::middleware('user')->prefix('user')->name('user.')->group(function () {
@@ -37,4 +38,11 @@ Route::middleware('user')->prefix('user')->name('user.')->group(function () {
     Route::post('product/investment', [ProductController::class, 'investment'])->name('product.investment');
 
     Route::get('investment/index', [ProductController::class, 'showInvestments'])->name('investment.index');
+
+    Route::get('media/index', [MediaController::class, 'index'])->name('media.index');
+    Route::get('media/create', [MediaController::class, 'create'])->name('media.create');
+    Route::post('media/store', [MediaController::class, 'store'])->name('media.store');
+    Route::get('media/{media}', [MediaController::class, 'show'])->name('media.show');
+    Route::get('media/{media}/edit', [MediaController::class, 'edit'])->name('media.edit');
+    Route::delete('media/{media}', [MediaController::class, 'destroy'])->name('media.destroy');
 });

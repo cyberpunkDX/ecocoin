@@ -38,7 +38,7 @@
                                         <dd class="col-sm-8">{{ $user->location ?? 'Not specified' }}</dd>
 
                                         <dt class="col-sm-4">Account Balance:</dt>
-                                        <dd class="col-sm-8">${{ number_format($user->account->balance ?? 0, 2) }}</dd>
+                                        <dd class="col-sm-8">{{ formatAmount($user->account->balance) }}</dd>
                                     </dl>
                                 </div>
                             </div>

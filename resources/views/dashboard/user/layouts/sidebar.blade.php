@@ -35,6 +35,12 @@
                     <span class="menu-text"> Dashboard </span>
                 </a>
             </li>
+            <li class="side-nav-item">
+                <a href="{{ route('user.media.index') }}" class="side-nav-link">
+                    <span class="menu-icon"><i class="ti ti-camera"></i></span>
+                    <span class="menu-text"> Eco Media </span>
+                </a>
+            </li>
 
             <li class="side-nav-item">
                 <a href="{{ route('user.deposit.pricing.index') }}" class="side-nav-link">
@@ -58,25 +64,7 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="{{ route('user.product.index') }}" class="side-nav-link">
-                    <span class="menu-icon"><i class="ti ti-gift"></i></span>
-                    <span class="menu-text"> Products </span>
-                </a>
-            </li>
 
-            <li class="side-nav-item">
-                <a href="{{ route('user.investment.index') }}" class="side-nav-link">
-                    <span class="menu-icon"><i class="ti ti-chart-pie"></i></span>
-                    <span class="menu-text"> Investments </span>
-                </a>
-
-            <li class="side-nav-item">
-                <a href="{{ route('user.card.index') }}" class="side-nav-link">
-                    <span class="menu-icon"><i class="ti ti-credit-card"></i></span>
-                    <span class="menu-text"> My Cards </span>
-                </a>
-            </li>
         </ul>
 
         <div class="clearfix"></div>

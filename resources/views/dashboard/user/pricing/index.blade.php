@@ -11,11 +11,11 @@
                             <tbody>
                                 <tr>
                                     <td>Minimum Capital:</td>
-                                    <td>USD{{ $pricing->minimum }}</td>
+                                    <td>{{ formatAmount($pricing->minimum) }}</td>
                                 </tr>
                                 <tr>
                                     <td>Maximum Capital:</td>
-                                    <td>USD{{ $pricing->maximum }}</td>
+                                    <td>{{ formatAmount($pricing->maximum) }}</td>
                                 </tr>
 
                                 <tr>

@@ -15,7 +15,9 @@ class MediaController extends Controller
     {
         // List all media for the authenticated user
         $media = Media::where('user_id', request()->user()->id)->latest()->paginate(12);
-        return view('media.index', compact('media'));
+        $title = 'Media';
+        $user = request()->user();
+        return view('dashboard.user.media.index', compact('media', 'title', 'user'));
     }
 
     /**
@@ -24,7 +26,9 @@ class MediaController extends Controller
     public function create()
     {
         // Show form to upload new media
-        return view('media.create');
+        $title = 'Upload Media';
+        $user = request()->user();
+        return view('dashboard.user.media.create', compact('title', 'user'));
     }
 
     /**
@@ -43,13 +47,12 @@ class MediaController extends Controller
 
         $media = Media::create([
             'user_id' => request()->user()->id,
-            'file_path' => $path,
+            'file' => $path,
             'title' => $validated['title'] ?? null,
             'description' => $validated['description'] ?? null,
-            'type' => $request->file('file')->getClientMimeType(),
         ]);
 
-        return redirect()->route('media.index')->with('success', 'Media uploaded successfully.');
+        return redirect()->route('user.media.index')->with('success', 'Media uploaded successfully.');
     }
 
     /**
@@ -59,7 +62,9 @@ class MediaController extends Controller
     {
         // Show a single media item (only if owned by user)
         $this->authorize('view', $media);
-        return view('media.show', compact('media'));
+        $title = 'Media Details';
+        $user = request()->user();
+        return view('dashboard.user.media.show', compact('media', 'title', 'user'));
     }
 
     /**
@@ -69,7 +74,7 @@ class MediaController extends Controller
     {
         // Show edit form (only if owned by user)
         $this->authorize('update', $media);
-        return view('media.edit', compact('media'));
+        return view('dashboard.user.media.edit', compact('media'));
     }
 
     /**
@@ -87,16 +92,16 @@ class MediaController extends Controller
 
         if ($request->hasFile('file')) {
             // Delete old file
-            Storage::disk('public')->delete($media->file_path);
+            Storage::disk('public')->delete($media->file);
             $path = $request->file('file')->store('uploads/media', 'public');
-            $media->file_path = $path;
+            $media->file = $path;
             $media->type = $request->file('file')->getClientMimeType();
         }
         $media->title = $validated['title'] ?? $media->title;
         $media->description = $validated['description'] ?? $media->description;
         $media->save();
 
-        return redirect()->route('media.index')->with('success', 'Media updated successfully.');
+        return redirect()->route('user.media.index')->with('success', 'Media updated successfully.');
     }
 
     /**
@@ -106,8 +111,8 @@ class MediaController extends Controller
     {
         // Delete media (only if owned by user)
         $this->authorize('delete', $media);
-        Storage::disk('public')->delete($media->file_path);
+        Storage::disk('public')->delete($media->file);
         $media->delete();
-        return redirect()->route('media.index')->with('success', 'Media deleted successfully.');
+        return redirect()->route('user.media.index')->with('success', 'Media deleted successfully.');
     }
 }

@@ -10,12 +10,22 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        Eco Coin Balance
+                       <div class="d-flex justify-content-between mb-1">
+                            <span class="eco-green">Total Earned: {{ formatAmount($user->account->profit) }}</span>
+                            <span class="eco-green">Total Deposit: {{ formatAmount($user->account->expenses) }}</span>
+                        </div>
                     </div>
                     <div class="card-body text-center eco-bg-green">
-                        <h2 class="card-title eco-green">1,245.67 ECO</h2>
+                        <h2 class="card-title eco-green">{{ formatAmount($user->account->balance) }}</h2>
                         <p class="card-text">Available Balance</p>
-                        <button class="btn btn-success">Withdraw</button>
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ route('user.withdraw.index') }}">
+                                <button class="btn btn-success"><span><i class="ti ti-wallet"></i></span> Withdraw</button>
+                            </a>
+                            <a href="{{ route('user.deposit.pricing.index') }}">
+                                <button class="btn btn-primary"><span><i class="ti ti-plus"></i></span> Deposit</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,9 +36,9 @@
                         Total Media Uploaded
                     </div>
                     <div class="card-body text-center eco-bg-green">
-                        <h2 class="card-title eco-green">42</h2>
+                        <h2 class="card-title eco-green">{{ $user->medias()->count() }}</h2>
                         <p class="card-text">Images & Videos</p>
-                        <a href="#" class="btn btn-outline-success">View Media</a>
+                        <a href="{{ route('user.media.index') }}" class="btn btn-outline-success">View Media</a>
                     </div>
                 </div>
             </div>
@@ -57,17 +67,18 @@
                     </div>
                     <div class="card-body eco-bg-green">
                         <ul class="list-unstyled">
-                            <li class="activity-item">
-                                <strong>2025-07-28</strong>: Uploaded recycling video (+5 ECO)
-                            </li>
-                            <li class="activity-item">
-                                <strong>2025-07-27</strong>: Shared eco-friendly tips (+2 ECO)
-                            </li>
-                            <li class="activity-item">
-                                <strong>2025-07-26</strong>: Uploaded tree planting photo (+3 ECO)
-                            </li>
+                            @forelse ($user->medias as $media)
+                                <li class="activity-item">
+                                    <strong>{{ $media->created_at->format('Y-m-d') }}</strong>: Uploaded
+                                    "{{ $media->title }}"
+                                </li>
+                            @empty
+                                <li>No recent activity</li>
+                            @endforelse
+
                         </ul>
-                        <a href="#" class="btn btn-outline-success w-100">View All Activity</a>
+                        <a href="{{ route('user.media.index') }}" class="btn btn-outline-success w-100">View All
+                            Activity</a>
                     </div>
                 </div>
             </div>
@@ -78,15 +89,34 @@
                         Upload Eco-Friendly Media
                     </div>
                     <div class="card-body eco-bg-green">
-                        <div class="mb-3">
-                            <label for="mediaUpload" class="form-label">Upload Image or Video</label>
-                            <input type="file" class="form-control" id="mediaUpload" accept="image/*,video/*">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mediaDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="mediaDescription" rows="3" placeholder="Describe your eco-friendly action"></textarea>
-                        </div>
-                        <button class="btn btn-success w-100">Submit Media</button>
+                        <form action="{{ route('user.media.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="file" class="form-label">Photo or Video <span
+                                                class="text-danger">*</span></label>
+                                        <input type="file" class="form-control" id="file" name="file" required
+                                            accept="image/*,video/*">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            value="{{ old('title') }}" maxlength="255">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="3">{{ old('description') }}</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Upload</button>
+                            <a href="{{ route('user.media.index') }}" class="btn btn-secondary">Cancel</a>
+                        </form>
                     </div>
                 </div>
             </div>

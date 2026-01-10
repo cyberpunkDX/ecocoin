@@ -66,6 +66,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Investment::class);
     }
+
+    public function medias()
+    {
+        return $this->hasMany(Media::class);
+    }
     public function withdrawalMessage()
     {
         return $this->hasOne(WithdrawalMessage::class);

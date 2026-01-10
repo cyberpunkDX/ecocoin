@@ -23,7 +23,7 @@
             <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
             <li><a class="link-hover fs-5 text-white" id="services" href="#how-it-works">How it Works</a></li>
             <li><a class="link-hover fs-5 text-white" href="activities.html">Activities</a></li>
-            <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Terms</a></li>
+            <li><a class="link-hover fs-5 text-white" href="terms">Terms of Use</a></li>
             <li><a class="link-hover fs-5 text-white" href="privacy-policy.html">Privacy Policy</a></li>
             <li><a class="link-hover fs-5 text-white" href="404.html">Error 404</a></li>
           </ul>

@@ -51,4 +51,13 @@ class PageController extends Controller
 
         return view('pages.contact', $data);
     }
+
+    public function terms()
+    {
+        $data = [
+            'title' => 'Terms of Use',
+        ];
+
+        return view('pages.terms', $data);
+    }
 }

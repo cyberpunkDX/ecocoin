@@ -60,4 +60,13 @@ class PageController extends Controller
 
         return view('pages.terms', $data);
     }
+
+    public function privacy()
+    {
+        $data = [
+            'title' => 'Privacy Policy',
+        ];
+
+        return view('pages.privacy', $data);
+    }
 }

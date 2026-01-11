@@ -16,3 +16,4 @@ Route::get('/legal/documentation', [PageController::class, 'legalDocumentation']
 Route::get('/help/center', [PageController::class, 'helpCenter'])->name('help.center');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/terms', [PageController::class, 'terms'])->name('terms');
+Route::get('/privacy', [PageController::class, 'privacy'])->name('privacy');
